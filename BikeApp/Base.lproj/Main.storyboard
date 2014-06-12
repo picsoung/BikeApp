@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.11"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--View Controller - BikeApp-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="BikeApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -45,7 +45,7 @@
                         </variation>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <navigationItem key="navigationItem" id="FGT-mV-fuJ">
+                    <navigationItem key="navigationItem" title="BikeApp" id="FGT-mV-fuJ">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="XUp-JN-Eif">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="KJI-Zb-Tol">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -54,7 +54,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="HNt-j0-t9D" kind="show" id="diX-5A-tlK"/>
+                                    <segue destination="HNt-j0-t9D" kind="show" id="yzP-bK-npO"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -66,7 +66,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="859.5" y="2.25"/>
+            <point key="canvasLocation" x="883.5" y="-3.75"/>
         </scene>
         <!--Start Screen Controller-->
         <scene sceneID="ntb-3k-Tac">
@@ -92,7 +92,7 @@
                                 </variation>
                                 <connections>
                                     <action selector="getLocation:" destination="HNt-j0-t9D" eventType="touchUpInside" id="m6Z-Jr-elk"/>
-                                    <segue destination="zzF-zF-ntr" kind="show" id="QrK-gt-iVT"/>
+                                    <segue destination="zzF-zF-ntr" kind="showDetail" id="PeR-ZN-BoO"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -133,7 +133,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OGn-FT-AGe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="165" y="33"/>
+            <point key="canvasLocation" x="216" y="403.5"/>
         </scene>
     </scenes>
 </document>

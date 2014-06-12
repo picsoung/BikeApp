@@ -11,6 +11,7 @@ import CoreLocation
 
 class StartScreenController: UIViewController {
     @IBOutlet var getLocationButton : UIButton
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib
@@ -29,5 +30,6 @@ class StartScreenController: UIViewController {
         println(appDelegate.currentLocation.coordinate.longitude)
         println(appDelegate.currentLocation.coordinate.latitude)
     }
+    
 
 }

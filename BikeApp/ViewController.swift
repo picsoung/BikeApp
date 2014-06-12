@@ -9,16 +9,6 @@
 import UIKit
 import Foundation
 
-class CustomTableViewCell : UITableViewCell {
-    @IBOutlet var backgroundImage: UIImageView
-    @IBOutlet var titleLabel: UILabel
-    
-    func loadItem(#title: String, image: String) {
-        backgroundImage.image = UIImage(named: image)
-        titleLabel.text = title
-    }
-}
-
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, APIControllerProtocol  {
     var bikeAPI: BikeAPIController?
     var stations: Array<BikeStation> = []
@@ -26,6 +16,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     let appDelegate : AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
 
     @IBOutlet var stationsTableView : UITableView
+    
+    @IBAction func returnToDashboard(segue: UIStoryboardSegue ){
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject) {
+        println("IN SEGUE")
+        var startViewController: StartScreenController = segue.destinationViewController as StartScreenController
+    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,7 +75,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 var latitude: Double? = result["latitude"] as? Double
                 var bikes: Int? = result["availableBikes"] as? Int
                 var city: String? = result["city"] as? String
-                var distance: Double? = getDistance(latitude!,long: longitude!)
+                var distance: Double? = result["distance"] as? Double //getDistance(latitude!,long: longitude!)
                 
                 var newStation = BikeStation(name: name!,city: city!, availableDocks: docks!, latitude: latitude!, longitude: longitude!, availableBikes: bikes!,distance: distance!)
                 stations.append(newStation)
