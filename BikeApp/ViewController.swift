@@ -64,10 +64,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
          println("You selected cell #\(indexPath.row)!")
     }
 
-    func didReceiveAPIResults(results: NSDictionary) {
+    func didReceiveAPIResults(results: NSDictionary[]) {
         // Store the results in our table data array
         if results.count>0 {
-            let allResults: NSDictionary[] = results["stationBeanList"] as NSDictionary[]
+//            let allResults: NSDictionary[] = results["stationBeanList"] as NSDictionary[]
+            let allResults: NSDictionary[] = results as NSDictionary[]
             for result: NSDictionary in allResults {
                 var name: String? = result["stationName"] as? String
                 var docks: Int? = result["availableDocks"] as? Int
