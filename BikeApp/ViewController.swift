@@ -75,13 +75,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 var latitude: Double? = result["latitude"] as? Double
                 var bikes: Int? = result["availableBikes"] as? Int
                 var city: String? = result["city"] as? String
-                var distance: Double? = result["distance"] as? Double //getDistance(latitude!,long: longitude!)
+                var distance: Double? = result["distance"] as? Double
                 
                 var newStation = BikeStation(name: name!,city: city!, availableDocks: docks!, latitude: latitude!, longitude: longitude!, availableBikes: bikes!,distance: distance!)
                 stations.append(newStation)
             }
             
-            stations = sort(stations){$0.distance<$1.distance}
+//            stations = sort(stations){$0.distance<$1.distance}
             self.stationsTableView.reloadData()
             UIApplication.sharedApplication().networkActivityIndicatorVisible = false
         }
