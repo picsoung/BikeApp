@@ -17,7 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate,CLLocationManagerDelegate 
     let locationManager: CLLocationManager = CLLocationManager()
     var currentLocation: CLLocation = CLLocation()
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: NSDictionary?) -> Bool {
         // Override point for customization after application launch.
         
