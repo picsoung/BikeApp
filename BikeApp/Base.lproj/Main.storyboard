@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6154.17" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="HNt-j0-t9D">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="HNt-j0-t9D">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.11"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
-        <!--View Controller - BikeApp-->
+        <!--BikeApp-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="BikeApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -13,7 +13,7 @@
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="576"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="87" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="2J3-2e-3F1">
@@ -23,7 +23,7 @@
                                     <rect key="frame" x="0.0" y="30" width="480" height="552"/>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="-4" y="0.0" width="324" height="586"/>
+                                    <rect key="frame" x="38" y="0.0" width="324" height="586"/>
                                 </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="vXZ-lx-hvc" id="iHR-qa-nHT"/>
@@ -32,7 +32,6 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="2J3-2e-3F1"/>
@@ -59,7 +58,6 @@
                             </button>
                         </barButtonItem>
                     </navigationItem>
-                    <size key="freeformSize" width="320" height="640"/>
                     <connections>
                         <outlet property="stationsTableView" destination="2J3-2e-3F1" id="wLx-LL-7og"/>
                     </connections>
@@ -77,7 +75,7 @@
                         <viewControllerLayoutGuide type="bottom" id="7xU-dk-sll"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="dWB-Np-I4a">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="640"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GTJ-Ai-Vgi">
@@ -97,7 +95,6 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="GTJ-Ai-Vgi"/>
@@ -133,7 +130,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OGn-FT-AGe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="216" y="403.5"/>
+            <point key="canvasLocation" x="184.5" y="529.5"/>
         </scene>
     </scenes>
 </document>

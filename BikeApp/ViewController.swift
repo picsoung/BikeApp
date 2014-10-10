@@ -10,17 +10,23 @@ import UIKit
 import Foundation
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, APIControllerProtocol  {
-    var bikeAPI: BikeAPIController?
+    
+    var bikeAPI: BikeAPIController = BikeAPIController()
     var stations: Array<BikeStation> = []
     let kCellIdentifier: String = "StationResultCell"
     let appDelegate : AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+    
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder);
+//        fatalError("init(coder:) has not been implemented")
+    }
 
-    @IBOutlet var stationsTableView : UITableView
+    @IBOutlet var stationsTableView : UITableView!
     
     @IBAction func returnToDashboard(segue: UIStoryboardSegue ){
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject) {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         println("IN SEGUE")
         var startViewController: StartScreenController = segue.destinationViewController as StartScreenController
     }
@@ -35,7 +41,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         stationsTableView.registerNib(nib, forCellReuseIdentifier: kCellIdentifier)
         
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-        self.bikeAPI!.getStations()
+        self.bikeAPI.getStations()
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,18 +49,20 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         // Dispose of any resources that can be recreated.
     }
     
-    func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return stations.count
     }
     
-    func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
-        var cell: CustomCell = tableView.dequeueReusableCellWithIdentifier(kCellIdentifier) as CustomCell
-        if cell == nil {
+func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        var cell: CustomCell = tableView.dequeueReusableCellWithIdentifier(kCellIdentifier) as CustomCell!
+//        if cell == nil {
             cell = CustomCell(style: UITableViewCellStyle.Value1, reuseIdentifier: kCellIdentifier)
-        }
+//        }
         
         let station = self.stations[indexPath.row]
         
+        println(station)
+
         cell.loadItem(name: station.name!, city: station.city!,bikes:station.availableDocks!, docks:station.availableBikes!,distance: station.distance!)
         return cell
     }
@@ -63,11 +71,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
          println("You selected cell #\(indexPath.row)!")
     }
 
-    func didReceiveAPIResults(results: NSDictionary[]) {
+    func didReceiveAPIResults(results: [NSDictionary]) {
         // Store the results in our table data array
         if results.count>0 {
 //            let allResults: NSDictionary[] = results["stationBeanList"] as NSDictionary[]
-            let allResults: NSDictionary[] = results as NSDictionary[]
+            let allResults: [NSDictionary] = results as [NSDictionary]
             for result: NSDictionary in allResults {
                 var name: String? = result["stationName"] as? String
                 var docks: Int? = result["availableDocks"] as? Int
@@ -106,12 +114,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             return radius*acos(sin(rlat)*sin(rlat2)+cos(rlng-rlng2)*cos(rlat)*cos(rlat2))
         }
     }
-    
-//    @IBAction func getLocation(sender : AnyObject){
-//        let appDelegate : AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
-//        
-//        appDelegate.getLocation()
-//    }
     
 }
 

@@ -9,8 +9,9 @@
 import UIKit
 import CoreLocation
 
+
 class StartScreenController: UIViewController {
-    @IBOutlet var getLocationButton : UIButton
+    @IBOutlet var getLocationButton : UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()

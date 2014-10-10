@@ -14,7 +14,7 @@ protocol LocationControllerProtocol {
 }
 
 class LocationController: NSObject{
-    var geoLoc: AnyObject[] = []
+    var geoLoc: [AnyObject] = []
     var delegate: LocationControllerProtocol?
     let locationManager: CLLocationManager = CLLocationManager()
     var location: CLLocation = CLLocation()
@@ -33,7 +33,7 @@ class LocationController: NSObject{
     }
     
     //#pragma mark - CLLocationManagerDelegate
-    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: AnyObject[]!) {
+    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
         println(locations)
         self.location = locations[0] as CLLocation
         self.locationManager.stopUpdatingLocation()

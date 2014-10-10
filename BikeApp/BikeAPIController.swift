@@ -9,12 +9,14 @@
 import Foundation
 
 protocol APIControllerProtocol {
-    func didReceiveAPIResults(results: NSDictionary[])
+    func didReceiveAPIResults(results: [NSDictionary])
 }
 
 class BikeAPIController{
     var data: NSMutableData = NSMutableData()
     var delegate: APIControllerProtocol?
+    
+    init(){}
     
     init(delegate: APIControllerProtocol?) {
         self.delegate = delegate
@@ -26,14 +28,15 @@ class BikeAPIController{
         var url: NSURL = NSURL(string: urlPath)
         var request: NSURLRequest = NSURLRequest(URL: url)
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: {(response: NSURLResponse!,data: NSData!,error: NSError!) -> Void in
-            if error? {
+            if (error? != nil) {
                 println("ERROR: \(error.localizedDescription)")
             }
             else {
                 var error: NSError?
-                let jsonResult: NSDictionary[] = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &error) as NSDictionary[]
+                
+                let jsonResult: [NSDictionary] = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &error) as [NSDictionary]
                 // Now send the JSON result to our delegate object
-                if error? {
+                if (error? != nil) {
                     println("HTTP Error: \(error?.localizedDescription)")
                 }
                 else {
@@ -62,7 +65,7 @@ class BikeAPIController{
         // Request complete, self.data should now hold the resulting info
         // Convert the retrieved data in to an object through JSON deserialization
         var err: NSError
-        var jsonResult: NSDictionary[] = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as NSDictionary[]
+        var jsonResult: [NSDictionary] = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as [NSDictionary]
         
         println(jsonResult)
         

@@ -10,11 +10,11 @@ import UIKit
 
 class CustomCell: UITableViewCell {
 
-    @IBOutlet var stationLabel : UILabel
-    @IBOutlet var cityLabel : UILabel
-    @IBOutlet var availableBikesLabel : UILabel
-    @IBOutlet var availableDocksLabel : UILabel
-    @IBOutlet var distanceLabel : UILabel
+    @IBOutlet var stationLabel : UILabel!
+    @IBOutlet var cityLabel : UILabel!
+    @IBOutlet var availableBikesLabel : UILabel!
+    @IBOutlet var availableDocksLabel : UILabel!
+    @IBOutlet var distanceLabel : UILabel!
     
     func loadItem(#name: String, city: String, bikes:Int, docks:Int, distance: Double) {
         stationLabel.text = name
