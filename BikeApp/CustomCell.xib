@@ -57,11 +57,12 @@
                 </subviews>
             </tableViewCellContentView>
             <connections>
-                <outlet property="availableBikesLabel" destination="jkj-sB-bCr" id="L0g-Ss-3L9"/>
-                <outlet property="availableDocksLabel" destination="aU3-iq-Ybj" id="uNK-da-oKe"/>
-                <outlet property="cityLabel" destination="9wZ-TY-DNW" id="1pO-jZ-EEj"/>
-                <outlet property="distanceLabel" destination="V1L-7t-MGD" id="SUb-PO-6Vc"/>
-                <outlet property="stationLabel" destination="XHC-z8-cHb" id="WPv-cL-qva"/>
+                <outlet property="availableBikesLabel" destination="jkj-sB-bCr" id="nFu-50-BCR"/>
+                <outlet property="availableDocksLabel" destination="aU3-iq-Ybj" id="naS-xx-Eha"/>
+                <outlet property="cityLabel" destination="9wZ-TY-DNW" id="Y1W-nM-3L8"/>
+                <outlet property="distanceLabel" destination="V1L-7t-MGD" id="kdO-KA-8ZD"/>
+                <outlet property="stationLabel" destination="XHC-z8-cHb" id="dN5-Fz-2hP"/>
+                <outlet property="stationName" destination="XHC-z8-cHb" id="WWO-3O-2xA"/>
             </connections>
             <point key="canvasLocation" x="366.5" y="278"/>
         </tableViewCell>

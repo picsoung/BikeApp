@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B405D86F1949362E003584C6 /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B405D86E1949362D003584C6 /* CustomCell.xib */; };
+		B413D3D919E88EF8001957E6 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = B413D3D819E88EF8001957E6 /* SwiftyJSON.swift */; };
 		B469AF9A1948E8EA00AA3930 /* BikeStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B469AF991948E8EA00AA3930 /* BikeStation.swift */; };
 		B469AF9C1949091600AA3930 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B469AF9B1949091600AA3930 /* CustomCell.swift */; };
 		B471796A1947BD5C00612379 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47179691947BD5C00612379 /* AppDelegate.swift */; };
@@ -34,6 +35,7 @@
 
 /* Begin PBXFileReference section */
 		B405D86E1949362D003584C6 /* CustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
+		B413D3D819E88EF8001957E6 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		B469AF991948E8EA00AA3930 /* BikeStation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BikeStation.swift; sourceTree = "<group>"; };
 		B469AF9B1949091600AA3930 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		B47179641947BD5C00612379 /* BikeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BikeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -97,6 +99,7 @@
 				B48661BF1948E1A00047ED87 /* BikeAPIController.swift */,
 				B4E33E691948BDCA0098161D /* StartScreenController.swift */,
 				B48661BD1948CC900047ED87 /* LocationController.swift */,
+				B413D3D819E88EF8001957E6 /* SwiftyJSON.swift */,
 				B47179691947BD5C00612379 /* AppDelegate.swift */,
 				B471796E1947BD5C00612379 /* ViewController.swift */,
 				B47179701947BD5C00612379 /* Main.storyboard */,
@@ -245,6 +248,7 @@
 				B471796D1947BD5C00612379 /* BikeApp.xcdatamodeld in Sources */,
 				B48661BE1948CC900047ED87 /* LocationController.swift in Sources */,
 				B471796A1947BD5C00612379 /* AppDelegate.swift in Sources */,
+				B413D3D919E88EF8001957E6 /* SwiftyJSON.swift in Sources */,
 				B469AF9C1949091600AA3930 /* CustomCell.swift in Sources */,
 				B48661C01948E1A00047ED87 /* BikeAPIController.swift in Sources */,
 			);
